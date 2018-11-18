@@ -9,6 +9,16 @@
 
 Footstone for plugin develop.
 
+### Import dependency
+
+```xml
+<dependency>
+	<groupId>io.github.pleuvoir</groupId>
+	<artifactId>plugin-base</artifactId>
+	<version>${latest.version}</version>
+</dependency>
+```
+
 ### License
 [Apache License](LICENSE)
 
