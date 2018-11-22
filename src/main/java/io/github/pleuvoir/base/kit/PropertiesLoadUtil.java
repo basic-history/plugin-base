@@ -3,6 +3,7 @@ package io.github.pleuvoir.base.kit;
 import java.io.IOException;
 import java.util.Properties;
 
+import org.springframework.core.io.DefaultResourceLoader;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 import org.springframework.core.io.support.PropertiesLoaderUtils;
@@ -14,5 +15,9 @@ public abstract class PropertiesLoadUtil {
 		Properties properties = PropertiesLoaderUtils.loadProperties(res);
 		PropertiesWrap config = new PropertiesWrap(properties);
 		return config;
+	}
+
+	public static Properties pathToProperties(String location) throws IOException {
+		return PropertiesLoaderUtils.loadProperties(new DefaultResourceLoader().getResource(location));
 	}
 }
